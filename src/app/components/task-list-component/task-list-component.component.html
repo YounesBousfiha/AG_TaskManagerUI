@@ -1,0 +1,43 @@
+<!-- ...existing code... -->
+<div class="flex items-center justify-between mb-4 px-3 md:px-6">
+  <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-100">Tasks</h3>
+
+  <button (click)="openForm()"
+          class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-700 text-white text-sm font-medium rounded-md shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-400 transition">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+    </svg>
+    New Task
+  </button>
+</div>
+
+<div class="grid grid-cols-3 gap-4">
+  <div *ngFor="let col of columns" class="bg-gray-50 p-3 rounded">
+    <h4 class="font-semibold mb-2">{{ colLabels[col] }}</h4>
+
+    <div *ngFor="let task of grouped[col]; trackBy: trackById" class="mb-2">
+      <app-task-item-component
+        [task]="task"
+        (edit)="openEdit($event)"
+        (delete)="removeTask($event)"
+        (changeStatus)="updateTaskStatus($event.task, $event.status)"
+      >
+      </app-task-item-component>
+    </div>
+
+      <div *ngIf="grouped[col].length === 0" class="text-sm text-gray-400">No tasks</div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div *ngIf="isOpen" class="fixed inset-0 z-50 flex items-center justify-center px-4">
+  <!-- Backdrop: click to close -->
+  <div class="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity" (click)="isOpen = false" aria-hidden="true"></div>
+
+  <!-- Modal panel -->
+  <div class="relative z-10 w-full max-w-3xl">
+    <div class="animate-fade-in-up">
+      <app-task-form-component (close)="isOpen = false" (save)="saveTask($event)"></app-task-form-component>
+    </div>
+  </div>
+</div>

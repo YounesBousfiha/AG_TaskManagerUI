@@ -1,0 +1,19 @@
+<div class="p-3 bg-white rounded shadow-sm">
+    <div class="flex justify-between items-start">
+        <div>
+            <h4 class="font-medium">{{ task?.title }}</h4>
+            <p class="text-sm text-gray-500" *ngIf="task?.description">{{ task?.description }}</p>
+        </div>
+
+        <div class="flex flex-col items-end gap-1">
+            <button class="text-sm text-indigo-600" (click)="onEdit()">Edit</button>
+            <button class="text-sm text-red-600" (click)="onDelete()">Delete</button>
+
+            <select #TaskStatus (change)="onChangeStatus($any(TaskStatus.value))" [value]="task?.status">
+                <option value="todo">Todo</option>
+                <option value="inprogress">In Progress</option>
+                <option value="done">Done</option>
+            </select>
+        </div>
+    </div>
+</div>

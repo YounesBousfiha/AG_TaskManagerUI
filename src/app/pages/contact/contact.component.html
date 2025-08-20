@@ -1,0 +1,89 @@
+<div class="flex justify-center items-center min-h-screen bg-gradient-to-br from-blue-400 via-purple-400 to-pink-400"
+  style="background-image: url('//www.salesforce.com/content/dam/web/en_us/www/images/company/forms/company-contact-form-background.jpg'); background-size: cover; background-position: center;"
+>
+    <div class="grid grid-cols-2 grid-rows-3 gap-4">
+        <div class="row-span-3 box-border bg-white rounded-lg px-4 shadow-2xl flex flex-col justify-center">
+
+            <div class="space-y-3">
+                <p class="text-center text-2xl">Request Call</p>
+                <p class="text-center text-lg">Give us Some info so the right person can get back to you</p>
+            </div>
+
+            <form (ngSubmit)="formSubmit()" class="pt-3">
+                <div class="space-y-6">
+                    <div class="flex justify-between">
+                        <div>
+                            <input class="border rounded-lg py-2 px-4" type="text" placeholder="First name">
+                        </div>
+                        <div>
+                            <input class="border rounded-lg py-2 px-4" type="text" placeholder="Last name">
+                        </div>
+                    </div>
+
+                    <div>
+                        <input class="border rounded-lg py-2 px-4 min-w-full" type="text" placeholder="Job title" >
+                    </div>
+
+                    <div>
+                        <input class="border rounded-lg py-2 px-4 min-w-full" type="text" placeholder="Email" >
+                    </div>
+
+                    <div>
+                        <input class="border rounded-lg py-2 px-4 min-w-full" type="text" placeholder="Phone" >
+                    </div>
+
+                    <div>
+                        <input class="border rounded-lg py-2 px-4 min-w-full" type="text" placeholder="Product FeedBack">
+                    </div>
+
+                    <div class="space-y-4">
+                        <p class="text-center text-sm">By registring you agree to the processing of your personal data by Todo as described in the privacy policy</p>
+                        <button type="submit" class="bg-blue-400 hover:bg-blue-500 rounded-lg text-center text-white p-3 min-w-full">
+                            Contact Me
+                        </button>
+                    </div>
+                </div>     
+
+
+
+            </form>
+        </div>
+
+
+        <div class="bg-white rounded-lg py-4 space-y-3 shadow-2xl">
+            <div class="text-2xl px-5">
+                <p>Give us a Call</p>
+                <p>+1 866-799-7427</p>
+            </div>
+            <div class="flex flex-col px-4 space-y-2">
+                <a class="underline text-blue-500" href="#" >Not in US ? Find local office</a>
+                <a class="underline text-blue-500" href="#" >Get Billing and technical support</a>
+                <a class="underline text-blue-500" href="#" >Manage Billing, licenses, and renewals in your Account</a>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg p-4 shadow-lg flex flex-col  justify-center space-y-8">
+            <div class="text-2xl px-5 space-y-2">
+                <p>Chat with Us</p>
+                <p class="font-light text-lg">Get product Info, Login info and live chat with an agent</p>
+            </div>
+            <div class="px-5">
+                <button class="border rounded-lg py-2 px-4 text-white bg-blue-500 hover:bg-blue-600 transition-all">
+                    Let's Chat! 
+                </button>
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-lg p-4 shadow-lg flex flex-col  justify-center space-y-8">
+            <div class="text-2xl px-5 space-y-2">
+                <p>Leave Us some FeedBack</p>
+                <p class="font-light text-lg">Good or bad we love to hear it all</p>
+            </div>
+            <div class="px-5">
+                <button class="border rounded-lg py-2 px-4 text-white bg-blue-500 hover:bg-blue-600 transition-all">
+                    Send FeedBack
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
